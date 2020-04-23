@@ -8,7 +8,7 @@ import { retry, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class FetchTweetsService {
-  private REST_API_SERVER = "http://tweetsaver.herokuapp.com/";
+  private REST_API_SERVER = "http://tweetsaver.herokuapp.com/?q=obama&callback=yourJSONPCallbackFn&count=2";
 
   constructor(private httpClient: HttpClient) { }
   handleError(error: HttpErrorResponse) {
@@ -22,5 +22,15 @@ export class FetchTweetsService {
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
+  }
+  public sendGetRequest(){
+    return this.httpClient.get(this.REST_API_SERVER).pipe(catchError(this.handleError));
+  }
+  getData() {
+    
+
+    // Pass the key for your callback (in this case 'callback')
+    // as the second argument to the jsonp method
+    return this.httpClient.jsonp(this.REST_API_SERVER, 'callback');
   }
 }

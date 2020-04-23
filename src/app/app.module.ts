@@ -9,7 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { SavedTweetsComponent } from './saved-tweets/saved-tweets.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import {MatCardModule} from '@angular/material/card';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', component: SavedTweetsComponent },
@@ -30,6 +30,7 @@ const routes: Routes = [
     MatCardModule,
     NgbModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

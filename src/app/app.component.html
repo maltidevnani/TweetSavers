@@ -12,31 +12,6 @@
                 </div>
             </div>
         </div>
-        <div class="row m-1">
-            <div class="col-md-5 border border-primary">
-                <div class="example-container">
-                    <h2>To do</h2>                  
-                    <div cdkDropList id="list-one"  [cdkDropListData]="todo"
-                      [cdkDropListConnectedTo]="['list-two']"
-                      class="example-list"
-                      (cdkDropListDropped)="drop($event)">
-                      <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-5 ml-auto border border-primary">
-                <div class="example-container">
-                    <h2>Done</h2>                  
-                    <div id="list-two" cdkDropList
-                        [cdkDropListData]="done"
-                      [cdkDropListConnectedTo]="['list-one']"
-                      class="example-list"
-                      (cdkDropListDropped)="drop($event)">
-                      <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
-                    </div>
-                  </div>
-            </div>
-        </div>    
+        <router-outlet></router-outlet>
     </div>
 </div>
-<router-outlet></router-outlet>
