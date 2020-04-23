@@ -11,6 +11,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 const routes: Routes = [
   { path: '', component: SavedTweetsComponent },
 ];
@@ -31,7 +32,8 @@ const routes: Routes = [
     NgbModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
